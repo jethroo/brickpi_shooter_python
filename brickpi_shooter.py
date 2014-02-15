@@ -6,7 +6,7 @@ Created on 15.02.2014
 '''
 ###
 
-#from BrickPi import * #import BrickPi.py file to use BricPi operations
+from BrickPi import * #import BrickPi.py file to use BricPi operations
 import time
 import threading
 import struct
@@ -79,14 +79,14 @@ def shoot():
 
 def update_and_wait():
     BrickPiUpdateValues();
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 if __name__ == '__main__':
 
-    #BrickPiSetup() #setup the serial port for communication
-    #BrickPi.MotorEnable[PORT_A] = 1 #Enable the Motor A
-    #BrickPi.MotorEnable[PORT_D] = 1 #Enable the Motor D
-    #BrickPiSetupSensors() #Send the properties of sensors to BrickPi
+    BrickPiSetup() #setup the serial port for communication
+    BrickPi.MotorEnable[PORT_A] = 1 #Enable the Motor A
+    BrickPi.MotorEnable[PORT_D] = 1 #Enable the Motor D
+    BrickPiSetupSensors() #Send the properties of sensors to BrickPi
 
     print ('Press a key')
     inkey = _Getch()
